@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Entered number:</strong>
+  <%= @number.entered_number %>
+</p>
+
+<p>
+  <strong>Converted number:</strong>
+  <%= @number.converted_number %>
+</p>
+
+<%= link_to 'Edit', edit_number_path(@number) %> |
+<%= link_to 'Back', numbers_path %>

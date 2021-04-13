@@ -1,0 +1,22 @@
+<%= form_with(model: number) do |form| %>
+  <% if number.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(number.errors.count, "error") %> prohibited this number from being saved:</h2>
+
+      <ul>
+        <% number.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :entered_number %>
+    <%= form.number_field :entered_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Convert to ASCII' %>
+  </div>
+<% end %>

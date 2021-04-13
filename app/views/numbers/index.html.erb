@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Integer to Alphabet</h1>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Integer</th>
+      <th>Alphabet</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @numbers.each do |number| %>
+      <tr>
+        <td><%= number.entered_number %></td>
+        <td><%= number.converted_number %></td>
+        <td><%= link_to 'Show', number %></td>
+        <td><%= link_to 'Edit', edit_number_path(number) %></td>
+        <td><%= link_to 'Destroy', number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Number', new_number_path %>
